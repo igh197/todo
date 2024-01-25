@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미스테리 숫자 맞추기</title>
+</head>
+<body style="background-color: #6543;align-items: center;">
+    <h1 style="color:#FFF;">미스테리 숫자 맞추기</h1>
+    <h3>1부터 100사이의 숫자를 입력하시오</h3>
+    <input type="nubmer"id="num">
+    <button id="inp"type="submit" style="border-color: #FFFF00; color:#FFFF00;background-color: black;">뚜둥!</button>
+    <h2 id="hint"></h2>
+    <button id="reload" style="display:none ;"></button>
+    <script>
+       let n = Math.round(Math.random()*100)
+       
+       const button = document.getElementById("inp")
+       const reload = document.getElementById("reload")
+        button.addEventListener('click',function(event){
+            
+        let inp = document.getElementById("num").value
+            if(n<inp){
+                
+                let h=document.getElementById("hint")
+                h.textContent="너무 커요"
+            }
+            else if(n > inp){
+
+                let h=document.getElementById("hint")
+                h.textContent="너무 작아요"
+            }
+            else{
+                alert("맞췄네요!")
+            }
+        })
+
+                
+       
+    </script>
+</body>
+</html>
